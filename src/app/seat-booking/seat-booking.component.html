@@ -1,0 +1,50 @@
+<div class="container">
+  <h2>Train Seat Reservation</h2>
+
+  <!-- Seat Selection Section -->
+  <div class="seat-selection">
+    <label for="numSeats">How many seats ?</label>
+    <input
+      type="number"
+      [(ngModel)]="numSeats"
+      id="numSeats"
+      class="input-field"
+      min="1"
+      max="7"
+    />
+  </div>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div *ngIf="seats.length > 0">
+    <h4>Available Seats: {{ availableSeatsCount }}</h4>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="button-container">
+    <button class="book-btn" (click)="bookSeats()">Book Seats</button>
+    <!--<button (click)="resetBooking()" class="reset-btn">Reset Seats</button> -->
+  </div>
+
+  <!-- Booked Seats Display -->
+  <div
+    *ngIf="seats.length > 0 && bookedSeats.length > 0"
+    class="selected-seats"
+  >
+    <h4>Booked Seats: {{ bookedSeats.join(', ') }}</h4>
+  </div>
+
+  <div *ngIf="seats.length > 0">
+    <h3>Seats Status</h3>
+    <div class="row" *ngFor="let row of seatRows(seats)">
+      <div
+        *ngFor="let seat of row"
+        class="seat"
+        [ngClass]="{
+          booked: seat.is_booked,
+          available: !seat.is_booked
+        }"
+      >
+        {{ seat.seat_number }}
+      </div>
+    </div>
+  </div>
+</div>

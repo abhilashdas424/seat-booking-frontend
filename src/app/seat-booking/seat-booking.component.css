@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f9fc;
+  color: #333;
+}
+
+.container {
+  padding: 20px;
+  max-width: 90%;
+  margin: 40px auto;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h3,
+h4 {
+  text-align: center;
+  color: #555;
+  margin: 15px 0;
+}
+
+/* Input Field */
+.input-field {
+  width: 60px;
+  padding: 8px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.input-field:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Buttons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button.book-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+button.reset-btn {
+  background-color: #d9534f;
+  color: white;
+  visibility: hidden;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: not-allowed; /* No interactivity */
+}
+
+.booked {
+  background-color: #cdc8c8;
+  color: rgb(12, 12, 12);
+  border: 2px solid #cdc8c8;
+}
+
+.available {
+  background-color: #ffffff;
+  color: rgb(10, 10, 10);
+  border: 2px solid #32b937;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Selected Seats Section */
+.selected-seats {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
